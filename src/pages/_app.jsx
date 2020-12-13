@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    background-color: aliceblue;
+    background-color: hsl(270 75% 90% / 1);
     align-items: center;
     background-image: url('coin_spin.gif');
     background-position: center;
