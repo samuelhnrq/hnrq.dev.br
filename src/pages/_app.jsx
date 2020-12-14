@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     @media ${device.laptop} {
       font-size: 16px;
     }
+    font-family: 'Frank Ruhl Libre', serif;
   }
   body {
     margin: 0;
