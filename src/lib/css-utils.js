@@ -18,3 +18,9 @@ export const device = {
   desktop: `(min-width: ${size.desktop})`,
   desktopL: `(min-width: ${size.desktop})`,
 }
+
+export const flexCenterContainer = `
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`

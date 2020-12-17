@@ -1,16 +1,34 @@
 import React from 'react'
 import Head from 'next/head'
-import styled from 'styled-components'
 import Logo from '../components/Logo'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faGithub,
-  faTwitter,
-  faReddit,
-  faLinkedin,
-} from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { device } from '../lib/breakpoints'
+import styled from '@emotion/styled'
+import { device, flexCenterContainer } from '../lib/css-utils'
+import MediaButtons from '../components/MediaButtons'
+
+const RootContainer = styled.div`
+  ${flexCenterContainer}
+  overflow: hidden;
+  height: 100vh;
+  background-color: hsl(270 75% 90% / 1);
+  background-image: url('coin_spin.gif');
+  background-position: center;
+  background-size: 100px;
+`
+
+const TiltedContainer = styled.div`
+  max-width: 95vw;
+  text-align: center;
+  transform: rotate(5deg);
+  background-color: white;
+  padding: 45vh min(60px, 10vw);
+`
+
+const UnTiltContent = styled.div`
+  transform: rotate(-5deg);
+  @media ${device.laptopL} {
+    display: flex;
+  }
+`
 
 const Titulo = styled.h1`
   width: fit-content;
@@ -31,46 +49,9 @@ const WipMark = styled.h5`
   margin: 5px 10px 0;
 `
 
-const TiltedContainer = styled.div`
-  background-color: white;
-  padding: min(40px, 7vw) min(30px, 7vw);
-  max-width: 95vw;
-  text-align: center;
-  transform: rotate(2deg);
-`
-
-const UnTiltContent = styled.div`
-  transform: rotate(-2deg);
-  @media ${device.laptopL} {
-    display: flex;
-  }
-`
-
-const SocialIcon = styled(FontAwesomeIcon)`
-  margin: 0 5px;
-  @media ${device.laptopL} {
-    margin: 10px auto;
-  }
-`
-
-const MediaButtons = styled.div`
-  border-top: 2px solid #eaeaea;
-  margin: 15px 0 0;
-  padding: 20px 0 0;
-  @media ${device.laptopL} {
-    margin-left: 25px;
-    padding-left: 25px;
-    border-left: 2px solid #eaeaea;
-    border-top: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-`
-
 export default function Home() {
   return (
-    <div>
+    <RootContainer>
       <Head>
         <title>HNRQ</title>
         <link rel="icon" href="/favicon.ico" />
@@ -82,41 +63,9 @@ export default function Home() {
             <Logo />
             <WipMark>WIP!</WipMark>
           </div>
-          <MediaButtons>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://github.com/samuelhnrq"
-            >
-              <SocialIcon icon={faGithub} size="2x" color="black" />
-            </a>
-            <a href="mailto:samosaara@gmail.com">
-              <SocialIcon icon={faEnvelope} size="2x" color="black" />
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://reddit.com/u/samosaara"
-            >
-              <SocialIcon icon={faReddit} size="2x" color="black" />
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://linkedin.com/in/samosaara"
-            >
-              <SocialIcon icon={faLinkedin} size="2x" color="black" />
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://twitter.com/samo_saara"
-            >
-              <SocialIcon icon={faTwitter} size="2x" color="black" />
-            </a>
-          </MediaButtons>
+          <MediaButtons />
         </UnTiltContent>
       </TiltedContainer>
-    </div>
+    </RootContainer>
   )
 }
