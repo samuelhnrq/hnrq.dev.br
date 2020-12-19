@@ -35,8 +35,9 @@ const RootContainer = styled.div`
   background-color: hsl(270 75% 90% / 1);
   background-image: url('coin_spin.gif');
   background-position: center;
+  background-attachment: fixed;
   box-shadow: 0 1px 5px hsl(0deg, 0%, 0%);
-  background-size: 100px;
+  background-size: 10vh;
 `
 
 const TiltedContainer = styled.div`
@@ -80,18 +81,24 @@ const headLineStyle = css`
   flex-wrap: wrap;
   background-color: whitesmoke;
   text-align: center;
+  @media ${device.laptopL} {
+    h1,
+    div {
+      flex: 1 1 0;
+    }
+    h1 {
+      border-right: 1px solid grey;
+    }
+    h1:last-child {
+      border-right: none;
+      border-left: 1px solid grey;
+    }
+  }
   * {
-    flex: 1 1 0px;
+    flex: 1 1 100%;
   }
   p {
     padding: 0 50px;
-  }
-  h1 {
-    border-right: 1px solid grey;
-  }
-  h1:last-child {
-    border-right: none;
-    border-left: 1px solid grey;
   }
 `
 
