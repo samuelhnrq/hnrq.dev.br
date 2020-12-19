@@ -11,9 +11,12 @@ export default function App({ Component, pageProps }) {
             box-sizing: border-box;
             font-size: 14px;
             @media ${device.laptop} {
-              font-size: 16px;
+              font-size: 18px;
             }
             font-family: 'Frank Ruhl Libre', serif;
+          }
+          h1 {
+            font-size: 2.5rem;
           }
           body {
             margin: 0;
