@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 import { device } from '../lib/css-utils'
@@ -32,8 +32,11 @@ const ButtonsContainer = styled.div`
 `
 
 function MediaButtons() {
+  const [loading, setLoading] = useState(false)
+  useEffect(() => setLoading(false), [])
+
   return (
-    <ButtonsContainer>
+    <ButtonsContainer hidden={loading}>
       <a target="_blank" rel="noreferrer" href="https://github.com/samuelhnrq">
         <FontAwesomeIcon
           icon={faGithub}

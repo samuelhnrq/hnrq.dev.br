@@ -70,7 +70,7 @@ const WipMark = styled.h5`
   width: fit-content;
   background-color: aqua;
   font-size: 1.2rem;
-  padding 2px 4px;
+  padding: 2px 4px;
   margin: 5px 10px 0;
 `
 
@@ -126,7 +126,10 @@ export default function Home() {
           css={css`
             animation: ${bounce} 1.5s ease infinite;
             position: absolute;
-            bottom: 10px;
+            bottom: 30px;
+            @media ${device.laptopL} {
+              bottom: 15px;
+            }
           `}
         />
       </RootContainer>
