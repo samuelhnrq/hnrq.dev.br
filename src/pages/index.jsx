@@ -50,27 +50,30 @@ const TiltedContainer = styled.div`
 
 const UnTiltContent = styled.div`
   transform: rotate(-5deg);
-  @media ${device.laptopL} {
+  @media ${device.laptop} {
     display: flex;
   }
 `
 
-const Titulo = styled.h1`
+const Titulo = styled.div`
   width: fit-content;
   background-color: pink;
-  padding: 3px 10px;
-  margin: 0 10px 20px;
+  padding: 0;
+  margin: 0 0 20px;
+  line-height: 1;
+  height: 35px;
   margin-left: auto;
   direction: ltr;
   font-size: 3rem;
 `
 
 const WipMark = styled.h5`
-  font-family: 'Comic Sans MS', 'Roboto', sans-serif;
+  font-family: 'Comic Sans MS', 'Times New Roman', serif;
   width: fit-content;
   background-color: aqua;
   font-size: 1.2rem;
-  padding: 2px 4px;
+  height: 20px;
+  padding: 4px 16px 1px 5px;
   margin: 5px 10px 0;
 `
 
@@ -81,28 +84,19 @@ const headLineStyle = css`
   flex-wrap: wrap;
   background-color: whitesmoke;
   text-align: center;
-  @media ${device.laptopL} {
-    h1,
-    div {
-      flex: 1 1 0;
-    }
-    h1 {
-      border-right: 1px solid grey;
-    }
-    h1:last-child {
-      border-right: none;
-      border-left: 1px solid grey;
-    }
-  }
-  * {
-    flex: 1 1 100%;
-  }
   p {
     padding: 0 50px;
   }
 `
 
 export default function Home() {
+  function scrollDown() {
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <>
       <RootContainer>
@@ -113,7 +107,18 @@ export default function Home() {
         <TiltedContainer>
           <UnTiltContent>
             <div>
-              <Titulo>סמואל</Titulo>
+              <Titulo>
+                <h1
+                  css={css`
+                    position: relative;
+                    left: 0.8rem;
+                    margin: 0;
+                    font-size: 3rem;
+                  `}
+                >
+                  סמואל
+                </h1>
+              </Titulo>
               <Logo />
               <WipMark>WIP!</WipMark>
             </div>
@@ -123,29 +128,35 @@ export default function Home() {
         <FontAwesomeIcon
           icon={faArrowDown}
           size="2x"
+          onClick={scrollDown}
           css={css`
+            @media ${device.laptop} {
+              bottom: 20px;
+            }
             animation: ${bounce} 1.5s ease infinite;
             position: absolute;
-            bottom: 30px;
-            @media ${device.laptopL} {
-              bottom: 15px;
-            }
+            bottom: 45px;
           `}
         />
       </RootContainer>
       <div css={headLineStyle}>
-        <h1>Hello, I code</h1>
-        <div>
-          <p>
-            Hello, proud ga<b>y</b>mer software engineer here. Friendly
-            neighboorhood hacker on my free time, open source contribuitor,
-            right wing activist and computer hardware enthusiast.
-          </p>
-          <p>
-            <i>A true master is an eternal student</i>
-          </p>
+        <div
+          css={css`
+            max-width: 60vw;
+          `}
+        >
+          <h1>Hello, I love to code</h1>
+          <div>
+            <p>
+              Hello, proud <i>gaymer</i> software engineer here. Friendly
+              neighboorhood hacker on my free time, open source contribuitor,
+              right wing activist and computer hardware enthusiast.
+            </p>
+            <p>
+              <i>A true master is an eternal student</i>
+            </p>
+          </div>
         </div>
-        <h1>A lot of different things</h1>
       </div>
     </>
   )

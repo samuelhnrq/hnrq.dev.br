@@ -11,17 +11,10 @@ import {
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons'
 
-const socialIconClass = css`
-  margin: 0 5px;
-  @media ${device.laptopL} {
-    margin: 10px auto;
-  }
-`
-
 const ButtonsContainer = styled.div`
   margin: 15px 0 0;
   padding: 20px 0 0;
-  @media ${device.laptopL} {
+  @media ${device.laptop} {
     margin-left: 25px;
     padding-left: 25px;
     border-top: none;
@@ -32,11 +25,22 @@ const ButtonsContainer = styled.div`
 `
 
 function MediaButtons() {
-  const [loading, setLoading] = useState(false)
-  useEffect(() => setLoading(false), [])
+  const [loaded, setLoaded] = useState(false)
+  useEffect(() => {
+    window.addEventListener('load', () => {
+      setLoaded(document.readyState === 'complete')
+    })
+  }, [])
 
+  const socialIconClass = css`
+    margin: 0 5px;
+    visibility: ${loaded ? 'visible' : 'hidden'};
+    @media ${device.laptop} {
+      margin: 10px auto;
+    }
+  `
   return (
-    <ButtonsContainer hidden={loading}>
+    <ButtonsContainer hidden={!loaded}>
       <a target="_blank" rel="noreferrer" href="https://github.com/samuelhnrq">
         <FontAwesomeIcon
           icon={faGithub}

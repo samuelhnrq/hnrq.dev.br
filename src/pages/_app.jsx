@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
             font-family: 'Frank Ruhl Libre', serif;
           }
           h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
           }
           body {
             margin: 0;
