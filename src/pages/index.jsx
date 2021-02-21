@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Logo from '../components/Logo'
 import styled from '@emotion/styled'
@@ -90,6 +90,12 @@ const headLineStyle = css`
 `
 
 export default function Home() {
+  const [loaded, setLoaded] = useState(false)
+  useEffect(() => {
+    window.addEventListener('load', () => {
+      setLoaded(document.readyState === 'complete')
+    })
+  }, [])
   function scrollDown() {
     window.scrollBy({
       top: window.innerHeight,
@@ -133,6 +139,7 @@ export default function Home() {
             @media ${device.laptop} {
               bottom: 20px;
             }
+            visibility: ${loaded ? 'visible' : 'hidden'};
             animation: ${bounce} 1.5s ease infinite;
             position: absolute;
             bottom: 45px;
