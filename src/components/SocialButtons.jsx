@@ -1,90 +1,54 @@
 import React, { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/react'
-import { device } from '../lib/css-utils'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithub,
   faTwitter,
   faReddit,
+  faSteam,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons'
 
 const ButtonsContainer = styled.div`
-  margin: 15px 0 0;
+  margin: 15px 0 0 -50px;
+  display: block;
   padding: 20px 0 0;
-  @media ${device.laptop} {
-    margin-left: 25px;
-    padding-left: 25px;
-    border-top: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  a {
+    margin: 10px 7px;
   }
 `
+
+const socialMediaButtons = [
+  { icon: faGithub, link: 'https://github.com/samuelhnrq' },
+  { icon: faEnvelope, link: 'mailto:samosaara@gmail.com' },
+  { icon: faLinkedin, link: 'https://linkedin.com/in/samosaara' },
+  { icon: faTwitter, link: 'https://twitter.com/samo_saara' },
+  { icon: faReddit, link: 'https://reddit.com/u/samosaara' },
+  { icon: faSteam, link: 'https://steamcommunity.com/id/samosaara' },
+]
 
 function MediaButtons() {
   const [loaded, setLoaded] = useState(false)
   useEffect(() => {
-    window.addEventListener('load', () => {
+    function refreshLoaded() {
       setLoaded(document.readyState === 'complete')
-    })
-  }, [])
-
-  const socialIconClass = css`
-    margin: 0 5px;
-    visibility: ${loaded ? 'visible' : 'hidden'};
-    @media ${device.laptop} {
-      margin: 10px auto;
     }
-  `
+    refreshLoaded()
+    window.addEventListener('load', refreshLoaded, { once: true })
+  }, [])
   return (
     <ButtonsContainer hidden={!loaded}>
-      <a target="_blank" rel="noreferrer" href="https://github.com/samuelhnrq">
-        <FontAwesomeIcon
-          icon={faGithub}
-          size="2x"
-          color="black"
-          css={socialIconClass}
-        />
-      </a>
-      <a href="mailto:samosaara@gmail.com">
-        <FontAwesomeIcon
-          icon={faEnvelope}
-          size="2x"
-          color="black"
-          css={socialIconClass}
-        />
-      </a>
-      <a target="_blank" rel="noreferrer" href="https://reddit.com/u/samosaara">
-        <FontAwesomeIcon
-          icon={faReddit}
-          size="2x"
-          color="black"
-          css={socialIconClass}
-        />
-      </a>
-      <a
-        target="_blank"
-        rel="noreferrer"
-        href="https://linkedin.com/in/samosaara"
-      >
-        <FontAwesomeIcon
-          icon={faLinkedin}
-          size="2x"
-          color="black"
-          css={socialIconClass}
-        />
-      </a>
-      <a target="_blank" rel="noreferrer" href="https://twitter.com/samo_saara">
-        <FontAwesomeIcon
-          icon={faTwitter}
-          size="2x"
-          color="black"
-          css={socialIconClass}
-        />
-      </a>
+      {socialMediaButtons.map((socialMedia) => (
+        <a
+          key={socialMedia.link}
+          target="_blank"
+          rel="noreferrer"
+          href={socialMedia.link}
+        >
+          <FontAwesomeIcon icon={socialMedia.icon} size="2x" color="black" />
+        </a>
+      ))}
     </ButtonsContainer>
   )
 }

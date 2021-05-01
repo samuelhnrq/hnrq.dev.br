@@ -50,9 +50,6 @@ const TiltedContainer = styled.div`
 
 const UnTiltContent = styled.div`
   transform: rotate(-5deg);
-  @media ${device.laptop} {
-    display: flex;
-  }
 `
 
 const Titulo = styled.div`
@@ -75,6 +72,9 @@ const WipMark = styled.h5`
   height: 20px;
   padding: 4px 16px 1px 5px;
   margin: 5px 10px 0;
+  > span {
+    margin-left: -14px;
+  }
 `
 
 const headLineStyle = css`
@@ -126,7 +126,9 @@ export default function Home() {
                 </h1>
               </Titulo>
               <Logo />
-              <WipMark>WIP!</WipMark>
+              <WipMark>
+                <span>WIP!</span>
+              </WipMark>
             </div>
             <MediaButtons />
           </UnTiltContent>
@@ -149,7 +151,7 @@ export default function Home() {
       <div css={headLineStyle}>
         <div
           css={css`
-            max-width: 60vw;
+            max-width: 500px;
           `}
         >
           <h1>Hello, I love to code</h1>
