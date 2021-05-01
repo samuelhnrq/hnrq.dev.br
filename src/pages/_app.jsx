@@ -1,12 +1,16 @@
 import React from 'react'
 import { css, Global, ThemeProvider } from '@emotion/react'
+import { dom, config as faConfig } from '@fortawesome/fontawesome-svg-core'
 import { device } from '../lib/css-utils'
+
+faConfig.autoAddCss = false
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <ThemeProvider theme={{ color: 'black' }}>
       <Global
         styles={css`
+          ${dom.css()}
           html {
             box-sizing: border-box;
             font-size: 14px;
@@ -31,9 +35,7 @@ export default function App({ Component, pageProps }) {
           }
         `}
       />
-      <ThemeProvider theme={{ color: 'black' }}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </>
+      <Component {...pageProps} />
+    </ThemeProvider>
   )
 }
