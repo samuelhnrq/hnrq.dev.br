@@ -20,8 +20,8 @@ const ButtonsContainer = styled.div`
 `
 
 const socialMediaButtons = [
-  { icon: faGithub, link: 'https://github.com/samuelhnrq' },
   { icon: faEnvelope, link: 'mailto:samosaara@gmail.com' },
+  { icon: faGithub, link: 'https://github.com/samuelhnrq' },
   { icon: faLinkedin, link: 'https://linkedin.com/in/samosaara' },
   { icon: faTwitter, link: 'https://twitter.com/samo_saara' },
   { icon: faReddit, link: 'https://reddit.com/u/samosaara' },

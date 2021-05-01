@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@emotion/babel-plugin": "11.3.0",
+    "babel-plugin-inline-react-svg": "^2.0.1",
     "eslint": "^7.25.0",
     "eslint-plugin-react": "^7.23.2",
     "prettier": "^2.2.1"
