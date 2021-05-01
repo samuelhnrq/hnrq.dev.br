@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import styled from '@emotion/styled'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -9,15 +8,17 @@ import {
   faSteam,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons'
+import { styled } from '@material-ui/core/styles'
+import { Typography } from '@material-ui/core'
 
-const ButtonsContainer = styled.div`
-  margin: 15px 0 0 -50px;
-  display: block;
-  padding: 20px 0 0;
-  a {
-    margin: 10px 7px;
-  }
-`
+const ButtonsContainer = styled(Typography)({
+  margin: '15px 0 0 -50px',
+  display: 'block',
+  padding: '20px 0 0',
+  '& > a': {
+    margin: '10px 7px',
+  },
+})
 
 const socialMediaButtons = [
   { icon: faEnvelope, link: 'mailto:samosaara@gmail.com' },
@@ -29,16 +30,8 @@ const socialMediaButtons = [
 ]
 
 function MediaButtons() {
-  const [loaded, setLoaded] = useState(false)
-  useEffect(() => {
-    function refreshLoaded() {
-      setLoaded(document.readyState === 'complete')
-    }
-    refreshLoaded()
-    window.addEventListener('load', refreshLoaded, { once: true })
-  }, [])
   return (
-    <ButtonsContainer hidden={!loaded}>
+    <ButtonsContainer variant="h4">
       {socialMediaButtons.map((socialMedia) => (
         <a
           key={socialMedia.link}
@@ -46,7 +39,7 @@ function MediaButtons() {
           rel="noreferrer"
           href={socialMedia.link}
         >
-          <FontAwesomeIcon icon={socialMedia.icon} size="2x" color="black" />
+          <FontAwesomeIcon icon={socialMedia.icon} color="black" />
         </a>
       ))}
     </ButtonsContainer>
