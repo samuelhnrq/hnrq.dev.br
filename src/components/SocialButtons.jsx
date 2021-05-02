@@ -12,11 +12,10 @@ import { styled } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
 const ButtonsContainer = styled(Typography)({
-  margin: '15px 0 0 -50px',
-  display: 'block',
   padding: '20px 0 0',
   '& > a': {
     margin: '10px 7px',
+    lineHeight: 1,
   },
 })
 

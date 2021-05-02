@@ -4,7 +4,6 @@ import LogoSvg from '../../public/final_logo.svg'
 
 const LogoObj = styled(LogoSvg)({
   margin: 'auto',
-  display: 'block',
   maxWidth: '60vw',
   height: '50vh',
 })

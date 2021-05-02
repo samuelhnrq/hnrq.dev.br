@@ -4,7 +4,7 @@ import theme from '../lib/mui-theme'
 import { ThemeProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
 
-import '../lib/global-styles.scss'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 faConfig.autoAddCss = false
 
@@ -21,7 +21,8 @@ export default function MyApp(props) {
 
   return (
     <ThemeProvider theme={theme}>
-      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+      {/* CssBaseline kickstart an elegant, consistent,
+       * and simple baseline to build upon.*/}
       <CssBaseline />
       <Component {...pageProps} />
     </ThemeProvider>
