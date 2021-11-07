@@ -1,13 +1,18 @@
-import { styled } from '@material-ui/core'
+import { styled } from '@material-ui/core/styles'
 import React from 'react'
-import LogoSvg from '../../public/final_logo.svg'
+import Image from 'next/image'
 
-const LogoObj = styled(LogoSvg)({
+const LogoObj = styled('div')({
   margin: 'auto',
   maxWidth: '60vw',
+  position: 'relative',
   height: '50vh',
 })
 
 export default function Logo() {
-  return <LogoObj preserveAspectRatio="xMidYMid meet" />
+  return (
+    <LogoObj>
+      <Image src="/final_logo.svg" layout="fill" />
+    </LogoObj>
+  )
 }

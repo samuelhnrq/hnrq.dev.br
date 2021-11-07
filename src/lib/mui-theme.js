@@ -1,8 +1,8 @@
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles'
+import { createTheme, responsiveFontSizes } from '@material-ui/core/styles'
 import red from '@material-ui/core/colors/red'
 
 // Create a theme instance.
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     fontFamily: ['Frank Ruhl Libre', 'Roboto', 'sans-serif'],
     fontSize: 16,
