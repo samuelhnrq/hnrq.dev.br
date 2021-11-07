@@ -1,5 +1,5 @@
 import { makeStyles, styled } from '@material-ui/core'
-import Logo from './Logo'
+import Logo from './HNRQLogo'
 import MediaButtons from './SocialButtons'
 import WipMark from './WipMark'
 import React from 'react'
