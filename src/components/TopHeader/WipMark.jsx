@@ -1,24 +1,24 @@
-import { styled } from '@mui/material'
-import React from 'react'
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
 
-const WipContainer = styled('h2')({
-  fontFamily: "'Comic Sans MS', 'Times New Roman', serif",
-  width: 'fit-content',
-  backgroundColor: 'aqua',
-  fontSize: '1.2rem',
-  height: '20px',
-  padding: '4px 16px 1px 5px',
-  margin: '5px 10px 0',
-  '& > span': {
-    marginLeft: '-14px',
-  },
-})
+const WipContainer = css`
+  font-family: 'Comic Sans MS', 'Times New Roman', serif;
+  width: fit-content;
+  background-color: aqua;
+  font-size: 1.2rem;
+  height: 20px;
+  padding: 4px 16px 1px 5px;
+  margin: 5px 10px 0;
+  & > span {
+    margin-left: -14px;
+  }
+`
 
 function WipMark() {
   return (
-    <WipContainer>
+    <h2 css={WipContainer}>
       <span>WIP!</span>
-    </WipContainer>
+    </h2>
   )
 }
 

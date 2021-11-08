@@ -1,22 +1,19 @@
-import { Box, Typography } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
-import React from 'react'
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
+import { Box, Typography } from '@mui/material'
 import { flexCenterContainer } from '../lib/css-utils'
 
-const styleSheet = makeStyles({
-  aboutLine: {
-    ...flexCenterContainer,
-    minHeight: '40vh',
-    padding: '1px',
-    flexWrap: 'wrap',
-    backgroundColor: 'whitesmoke',
-  },
-})
+const styleSheet = css`
+  ${flexCenterContainer};
+  min-height: '40vh';
+  padding: '1px';
+  flex-wrap: 'wrap';
+  background-color: 'whitesmoke';
+`
 
 function AboutMe() {
-  const styles = styleSheet()
   return (
-    <div className={styles.aboutLine}>
+    <div css={styleSheet}>
       <Box maxWidth="500px">
         <Typography variant="h4" align="right">
           Hello, I love to code

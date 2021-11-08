@@ -6,7 +6,7 @@ const theme = createTheme({
   // FIXME: Not working???
   typography: {
     fontFamily: ['"Frank Ruhl Libre"', 'Roboto', 'sans-serif'].join(','),
-    fontSize: 16,
+    fontSize: 14,
   },
   palette: {
     primary: {

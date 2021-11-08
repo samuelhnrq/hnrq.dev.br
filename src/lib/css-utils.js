@@ -1,3 +1,5 @@
+import { css } from '@emotion/react'
+
 const size = {
   mobileS: '320px',
   mobileM: '375px',
@@ -19,8 +21,8 @@ export const device = {
   desktopL: `(min-width: ${size.desktop})`,
 }
 
-export const flexCenterContainer = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}
+export const flexCenterContainer = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`

@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -7,16 +9,15 @@ import {
   faSteam,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons'
-import { styled } from '@mui/material/styles'
 import { Typography } from '@mui/material'
 
-const ButtonsContainer = styled(Typography)({
-  padding: '20px 0 0',
-  '& > a': {
-    margin: '10px 7px',
-    lineHeight: 1,
-  },
-})
+const ButtonsContainer = css`
+  padding: 20px 0 0;
+  & > a {
+    margin: 10px 7px;
+    line-height: 1;
+  }
+`
 
 const socialMediaButtons = [
   { icon: faGithub, link: 'https://github.com/samuelhnrq' },
@@ -28,7 +29,7 @@ const socialMediaButtons = [
 
 function MediaButtons() {
   return (
-    <ButtonsContainer variant="h4">
+    <Typography variant="h4" css={ButtonsContainer}>
       {socialMediaButtons.map((socialMedia) => (
         <a
           key={socialMedia.link}
@@ -39,7 +40,7 @@ function MediaButtons() {
           <FontAwesomeIcon icon={socialMedia.icon} color="black" />
         </a>
       ))}
-    </ButtonsContainer>
+    </Typography>
   )
 }
 

@@ -1,48 +1,34 @@
-import React from 'react'
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
 import Head from 'next/head'
+
 import { flexCenterContainer } from '../lib/css-utils'
-import { styled } from '@mui/material'
 import MainCard from '../components/TopHeader/MainCard'
 import AboutMe from '../components/AboutMe'
 
-const RootContainer = styled('div')({
-  ...flexCenterContainer,
-  position: 'relative',
-  flexDirection: 'column',
-  overflow: 'hidden',
-  height: '96vh',
-  backgroundColor: 'hsl(270 75% 90% / 1)',
-  backgroundImage: "url('coin_spin.gif')",
-  backgroundPosition: 'center',
-  backgroundAttachment: 'fixed',
-  boxShadow: '0 1px 5px hsl(0deg, 0%, 0%)',
-  backgroundSize: '10vh',
-})
-
-const TiltedContainer = styled('div')({
-  maxWidth: '95vw',
-  textAlign: 'center',
-  transform: 'rotate(5deg)',
-  backgroundColor: 'white',
-  padding: '45vh 60px',
-})
-
-const UnTiltContent = styled(MainCard)({
-  transform: 'rotate(-5deg)',
-})
+const rootStyle = css`
+  ${flexCenterContainer};
+  position: relative;
+  flex-direction: column;
+  overflow: hidden;
+  height: 96vh;
+  background-color: hsl(270 75% 90% / 1);
+  background-image: 'url(coin_spin.gif)';
+  background-position: center;
+  background-attachment: fixed;
+  box-shadow: 0 1px 5px hsl(0deg 0% 0%);
+  background-size: 10vh;
+`
 
 export default function Home() {
   return (
     <>
-      <RootContainer>
+      <div css={rootStyle}>
         <Head>
           <title>HNRQ</title>
-          <link rel="icon" href="/favicon.ico" />
         </Head>
-        <TiltedContainer>
-          <UnTiltContent />
-        </TiltedContainer>
-      </RootContainer>
+        <MainCard />
+      </div>
       <AboutMe />
     </>
   )
