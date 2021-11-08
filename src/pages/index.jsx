@@ -5,6 +5,9 @@ import Head from 'next/head'
 import { flexCenterContainer } from '../lib/css-utils'
 import MainCard from '../components/TopHeader/MainCard'
 import AboutMe from '../components/AboutMe'
+import TiltedContainer from '../components/TiltedContainer'
+import AshNazg from '../components/AshNazg'
+import { motion } from 'framer-motion'
 
 const rootStyle = css`
   ${flexCenterContainer};
@@ -27,7 +30,23 @@ export default function Home() {
         <Head>
           <title>HNRQ</title>
         </Head>
-        <MainCard />
+        <motion.div
+          css={css`
+            position: absolute;
+          `}
+          animate={{ rotate: [0, 360] }}
+          transition={{ duration: 180, repeat: Infinity, ease: 'linear' }}
+        >
+          <AshNazg />
+        </motion.div>
+        <TiltedContainer
+          css={css`
+            background-color: whitesmoke;
+            height: 100vh;
+          `}
+        >
+          <MainCard />
+        </TiltedContainer>
       </div>
       <AboutMe />
     </>

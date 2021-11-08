@@ -20,7 +20,7 @@ function ArrowDown() {
         repeat: Infinity,
         type: 'spring',
         delay,
-        bounce: 0.85,
+        duration: 2,
       },
     },
   }

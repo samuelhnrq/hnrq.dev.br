@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { Box, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import { flexCenterContainer } from '../lib/css-utils'
 
 const styleSheet = css`
@@ -26,6 +26,9 @@ function AboutMe() {
           hacker on my spare time, open source contribuitor, right wing activist
           and computer hardware enthusiast.
         </Typography>
+        <Button color="primary" variant="contained">
+          Click me
+        </Button>
       </Box>
     </div>
   )
