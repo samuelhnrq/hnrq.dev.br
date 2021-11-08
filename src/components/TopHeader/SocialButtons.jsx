@@ -1,6 +1,5 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithub,
   faTwitter,
@@ -20,7 +19,6 @@ const ButtonsContainer = styled(Typography)({
 })
 
 const socialMediaButtons = [
-  { icon: faEnvelope, link: 'mailto:samosaara@gmail.com' },
   { icon: faGithub, link: 'https://github.com/samuelhnrq' },
   { icon: faLinkedin, link: 'https://linkedin.com/in/samosaara' },
   { icon: faTwitter, link: 'https://twitter.com/samo_saara' },

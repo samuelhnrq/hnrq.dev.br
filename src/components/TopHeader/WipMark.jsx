@@ -1,7 +1,7 @@
 import { styled } from '@material-ui/core'
 import React from 'react'
 
-const WipContainer = styled('h5')({
+const WipContainer = styled('h2')({
   fontFamily: "'Comic Sans MS', 'Times New Roman', serif",
   width: 'fit-content',
   backgroundColor: 'aqua',

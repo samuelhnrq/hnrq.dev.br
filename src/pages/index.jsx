@@ -2,9 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import { flexCenterContainer } from '../lib/css-utils'
 import { styled } from '@material-ui/core'
-import MainCard from '../components/MainCard'
+import MainCard from '../components/TopHeader/MainCard'
 import AboutMe from '../components/AboutMe'
-import ArrowDown from '../components/TopHeader/ArrowDown'
 
 const RootContainer = styled('div')({
   ...flexCenterContainer,
@@ -25,7 +24,7 @@ const TiltedContainer = styled('div')({
   textAlign: 'center',
   transform: 'rotate(5deg)',
   backgroundColor: 'white',
-  padding: '45vh min(60px, 10vw)',
+  padding: '45vh 60px',
 })
 
 const UnTiltContent = styled(MainCard)({
@@ -43,7 +42,6 @@ export default function Home() {
         <TiltedContainer>
           <UnTiltContent />
         </TiltedContainer>
-        <ArrowDown />
       </RootContainer>
       <AboutMe />
     </>

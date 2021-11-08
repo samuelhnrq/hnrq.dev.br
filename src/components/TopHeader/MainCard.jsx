@@ -3,6 +3,7 @@ import Logo from './HNRQLogo'
 import MediaButtons from './SocialButtons'
 import WipMark from './WipMark'
 import React from 'react'
+import ArrowDown from './ArrowDown'
 
 const Titulo = styled('div')({
   width: 'fit-content',
@@ -35,6 +36,7 @@ function MainCard({ className }) {
       <Logo />
       <WipMark />
       <MediaButtons />
+      <ArrowDown />
     </div>
   )
 }
