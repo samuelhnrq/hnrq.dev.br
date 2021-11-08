@@ -1,4 +1,4 @@
-import { styled } from '@material-ui/core'
+import { styled } from '@mui/material'
 import React from 'react'
 
 const WipContainer = styled('h2')({

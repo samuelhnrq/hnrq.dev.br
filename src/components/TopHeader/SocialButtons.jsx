@@ -7,8 +7,8 @@ import {
   faSteam,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons'
-import { styled } from '@material-ui/core/styles'
-import { Typography } from '@material-ui/core'
+import { styled } from '@mui/material/styles'
+import { Typography } from '@mui/material'
 
 const ButtonsContainer = styled(Typography)({
   padding: '20px 0 0',

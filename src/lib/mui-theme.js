@@ -1,10 +1,11 @@
-import { createTheme, responsiveFontSizes } from '@material-ui/core/styles'
-import red from '@material-ui/core/colors/red'
+import { createTheme, responsiveFontSizes } from '@mui/material'
+import { red } from '@mui/material/colors'
 
 // Create a theme instance.
 const theme = createTheme({
+  // FIXME: Not working???
   typography: {
-    fontFamily: ['Frank Ruhl Libre', 'Roboto', 'sans-serif'],
+    fontFamily: ['"Frank Ruhl Libre"', 'Roboto', 'sans-serif'].join(','),
     fontSize: 16,
   },
   palette: {

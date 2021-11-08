@@ -1,4 +1,5 @@
-import { makeStyles, styled } from '@material-ui/core'
+import { styled } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import Logo from './HNRQLogo'
 import MediaButtons from './SocialButtons'
 import WipMark from './WipMark'

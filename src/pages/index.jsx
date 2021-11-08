@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { flexCenterContainer } from '../lib/css-utils'
-import { styled } from '@material-ui/core'
+import { styled } from '@mui/material'
 import MainCard from '../components/TopHeader/MainCard'
 import AboutMe from '../components/AboutMe'
 
