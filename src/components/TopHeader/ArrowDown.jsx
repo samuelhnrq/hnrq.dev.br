@@ -11,11 +11,11 @@ function scrollDown() {
 }
 
 function ArrowDown() {
-  const delay = 0
+  const delay = 10
   const animations = {
-    hidden: { opacity: [0, 1], transition: { delay } },
+    hidden: { opacity: [0, 1], color: 'red', transition: { delay } },
     bounce: {
-      y: [30, 50, 30],
+      y: [0, 30, 0],
       transition: {
         repeat: Infinity,
         type: 'spring',
@@ -27,7 +27,7 @@ function ArrowDown() {
 
   return (
     <motion.div
-      style={{ opacity: 0 }}
+      style={{ opacity: 0, position: 'absolute', bottom: '-10%' }}
       animate={['bounce', 'hidden']}
       variants={animations}
     >

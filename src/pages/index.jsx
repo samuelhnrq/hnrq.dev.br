@@ -7,20 +7,16 @@ import MainCard from '../components/TopHeader/MainCard'
 import AboutMe from '../components/AboutMe'
 import TiltedContainer from '../components/TiltedContainer'
 import AshNazg from '../components/AshNazg'
-import { motion } from 'framer-motion'
 
 const rootStyle = css`
   ${flexCenterContainer};
   position: relative;
   flex-direction: column;
   overflow: hidden;
-  height: 96vh;
-  background-color: hsl(270 75% 90% / 1);
-  background-image: 'url(coin_spin.gif)';
-  background-position: center;
+  min-height: 96vh;
+  background: linear-gradient(180deg, #d899ff 0%, hsl(190, 65%, 63%) 100%);
   background-attachment: fixed;
-  box-shadow: 0 1px 5px hsl(0deg 0% 0%);
-  background-size: 10vh;
+  box-shadow: 0 1px 5px black;
 `
 
 export default function Home() {
@@ -30,19 +26,10 @@ export default function Home() {
         <Head>
           <title>HNRQ</title>
         </Head>
-        <motion.div
-          css={css`
-            position: absolute;
-          `}
-          animate={{ rotate: [0, 360] }}
-          transition={{ duration: 180, repeat: Infinity, ease: 'linear' }}
-        >
-          <AshNazg />
-        </motion.div>
+        <AshNazg />
         <TiltedContainer
           css={css`
             background-color: whitesmoke;
-            height: 100vh;
           `}
         >
           <MainCard />

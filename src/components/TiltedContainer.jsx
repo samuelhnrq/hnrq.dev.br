@@ -6,13 +6,13 @@ function TiltedContainer({ children, className }) {
     <div
       className={className}
       css={css`
-        transform: rotate(5deg) scaleY(120%);
+        transform: rotate(5deg);
       `}
     >
       <div
         css={css`
           height: 100%;
-          transform: rotate(-5deg) scaleY(80%);
+          transform: rotate(-5deg);
           display: flex;
           flex-direction: column;
           justify-content: center;
