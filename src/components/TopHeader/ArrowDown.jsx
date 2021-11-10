@@ -55,13 +55,14 @@ function ArrowDown() {
         animation-name: bounce, appear;
         position: absolute;
         opacity: 0;
-        animation-delay: 5s, 5s;
-        animation-duration: 3s, 1s;
+        animation-delay: 10s, 10s;
+        animation-duration: 2s, 1s;
         animation-fill-mode: none, forwards;
         animation-iteration-count: infinite, 1;
         animation-timing-function: ease-out;
-        bottom: ${delta}px;
-        color: orangered;
+        bottom: ${delta + 5}px;
+        mix-blend-mode: multiply;
+        color: red;
       `}
     />
   )

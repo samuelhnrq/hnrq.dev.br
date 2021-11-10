@@ -64,6 +64,7 @@ export function SpinningAshNazg() {
         position: absolute;
         animation-name: AshNazg;
         animation-duration: 260s;
+        animation-timing-function: linear;
         animation-iteration-count: infinite;
       `}
     >
