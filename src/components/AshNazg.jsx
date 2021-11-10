@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { motion } from 'framer-motion'
 
 export function AshNazg(props) {
   return (
@@ -46,21 +45,34 @@ export function AshNazg(props) {
   )
 }
 
+const keyframes = css`
+  @keyframes AshNazg {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`
+
 export function SpinningAshNazg() {
   return (
-    <motion.div
+    <div
       css={css`
+        ${keyframes};
         position: absolute;
+        animation-name: AshNazg;
+        animation-duration: 260s;
+        animation-iteration-count: infinite;
       `}
-      animate={{ rotate: [0, 360] }}
-      transition={{ duration: 250, repeat: Infinity, ease: 'linear' }}
     >
       <AshNazg
         css={css`
           height: 100vh;
         `}
       />
-    </motion.div>
+    </div>
   )
 }
 
