@@ -1,7 +1,7 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { motion } from 'framer-motion'
-import React from 'react'
 
 function scrollDown() {
   window.scrollBy({
@@ -10,29 +10,60 @@ function scrollDown() {
   })
 }
 
-function ArrowDown() {
-  const delay = 10
-  const animations = {
-    hidden: { opacity: [0, 1], color: 'red', transition: { delay } },
-    bounce: {
-      y: [0, 30, 0],
-      transition: {
-        repeat: Infinity,
-        type: 'spring',
-        delay,
-        duration: 2,
-      },
-    },
+const delta = 25
+const keyframes = css`
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(${delta}px);
+    }
+    30% {
+      transform: translateY(${delta * 0.75}px);
+    }
+    40% {
+      transform: translateY(${delta}px);
+    }
+    80% {
+      transform: translateY(${delta}px);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+`
 
+function ArrowDown() {
   return (
-    <motion.div
-      style={{ opacity: 0, position: 'absolute', bottom: '-10%' }}
-      animate={['bounce', 'hidden']}
-      variants={animations}
-    >
-      <FontAwesomeIcon icon={faArrowDown} size="2x" onClick={scrollDown} />
-    </motion.div>
+    <FontAwesomeIcon
+      icon={faArrowDown}
+      size="3x"
+      additive="replace"
+      accumulate="sum"
+      onClick={scrollDown}
+      css={css`
+        ${keyframes};
+        animation-name: bounce, appear;
+        position: absolute;
+        opacity: 0;
+        animation-delay: 5s, 5s;
+        animation-duration: 3s, 1s;
+        animation-fill-mode: none, forwards;
+        animation-iteration-count: infinite, 1;
+        animation-timing-function: ease-out;
+        bottom: ${delta}px;
+        color: orangered;
+      `}
+    />
   )
 }
 

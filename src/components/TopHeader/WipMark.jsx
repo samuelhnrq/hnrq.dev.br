@@ -14,9 +14,9 @@ const WipContainer = css`
   }
 `
 
-function WipMark() {
+function WipMark(props) {
   return (
-    <h2 css={WipContainer}>
+    <h2 css={WipContainer} {...props}>
       <span>WIP!</span>
     </h2>
   )

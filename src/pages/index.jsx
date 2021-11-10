@@ -4,6 +4,7 @@ import Head from 'next/head'
 
 import { flexCenterContainer } from '../lib/css-utils'
 import MainCard from '../components/TopHeader/MainCard'
+import ArrowDown from '../components/TopHeader/ArrowDown'
 import AboutMe from '../components/AboutMe'
 import TiltedContainer from '../components/TiltedContainer'
 import AshNazg from '../components/AshNazg'
@@ -29,11 +30,13 @@ export default function Home() {
         <AshNazg />
         <TiltedContainer
           css={css`
+            width: min-content;
             background-color: whitesmoke;
           `}
         >
           <MainCard />
         </TiltedContainer>
+        <ArrowDown />
       </div>
       <AboutMe />
     </>

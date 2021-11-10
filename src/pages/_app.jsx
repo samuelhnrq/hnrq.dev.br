@@ -2,7 +2,11 @@
 import { Global, css } from '@emotion/react'
 import theme from '../lib/mui-theme'
 import { CssBaseline, ThemeProvider } from '@mui/material'
-import { dom as faDomUtils } from '@fortawesome/fontawesome-svg-core'
+import {
+  dom as faDomUtils,
+  config as faConfig,
+} from '@fortawesome/fontawesome-svg-core'
+faConfig.autoAddCss = false
 
 export default function MyApp(props) {
   const { Component, pageProps } = props
@@ -14,8 +18,6 @@ export default function MyApp(props) {
           ${faDomUtils.css()}
         `}
       />
-      {/* CssBaseline kickstart an elegant, consistent,
-       * and simple baseline to build upon.*/}
       <CssBaseline />
       <Component {...pageProps} />
     </ThemeProvider>

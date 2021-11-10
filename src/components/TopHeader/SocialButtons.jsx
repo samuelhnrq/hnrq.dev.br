@@ -13,6 +13,8 @@ import { Typography } from '@mui/material'
 
 const ButtonsContainer = css`
   padding: 20px 0 0;
+  display: flex;
+  flex-wrap: nowrap;
   & > a {
     margin: 10px 7px;
     line-height: 1;

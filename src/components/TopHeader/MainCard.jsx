@@ -3,41 +3,33 @@ import { css } from '@emotion/react'
 import Logo from './HNRQLogo'
 import MediaButtons from './SocialButtons'
 import WipMark from './WipMark'
-import ArrowDown from './ArrowDown'
-import { Typography } from '@mui/material'
-
-const Titulo = css`
-  width: fit-content;
-  background-color: pink;
-  padding: 0;
-  margin: 0 0 4vh auto;
-  line-height: 1;
-  height: 35px;
-  padding-left: 6px;
-  direction: ltr;
-  font-size: 3rem;
-`
+import Samuel from './Samuel'
 
 function MainCard({ className }) {
   return (
     <div
       className={className}
       css={css`
-        padding: 20px;
-        width: 100%;
+        padding: 20px 70px;
+        max-width: 90vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       `}
     >
-      <div css={Titulo}>
-        <Typography variant="h2">סמואל</Typography>
-      </div>
-      <Logo
+      <Samuel
         css={css`
-          max-height: 50vh;
+          flex-basis: 100%;
+          align-self: flex-end;
         `}
       />
-      <WipMark />
+      <Logo />
+      <WipMark
+        css={css`
+          align-self: flex-start;
+        `}
+      />
       <MediaButtons />
-      <ArrowDown />
     </div>
   )
 }

@@ -57,7 +57,7 @@ export function SpinningAshNazg() {
     >
       <AshNazg
         css={css`
-          height: 85vh;
+          height: 100vh;
         `}
       />
     </motion.div>
