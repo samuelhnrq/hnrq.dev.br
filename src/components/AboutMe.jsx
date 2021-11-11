@@ -2,6 +2,7 @@
 import { css } from '@emotion/react'
 
 import { Box, Divider, Typography } from '@mui/material'
+import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import { usePosts } from '../lib/cms/posts'
 import { flexCenterContainer } from '../lib/css-utils'
@@ -16,13 +17,16 @@ const styleSheet = css`
     margin: 10px 0;
     border-color: rgba(30, 30, 30, 0.3);
   }
+  & p {
+    margin: 0;
+  }
 `
 
 function AboutMe() {
   const { data } = usePosts()
   return (
     <div css={styleSheet}>
-      <Box maxWidth="600px">
+      <Box maxWidth="600px" marginY="40px">
         <Typography variant="h4" component="h2" align="right">
           Hello, I love to code
         </Typography>
@@ -43,15 +47,15 @@ function AboutMe() {
           Últimos Posts
         </Typography>
         {data.map((post) => (
-          <>
+          <React.Fragment key={post.id}>
             <Divider />
-            <Typography variant="h4" component="h2">
+            <Typography variant="h4" component="h2" gutterBottom>
               {post.title}
             </Typography>
-            <Typography gutterBottom>
-              <ReactMarkdown>{post.content}</ReactMarkdown>
+            <Typography gutterBottom component={ReactMarkdown} marginTop={0}>
+              {post.content}
             </Typography>
-          </>
+          </React.Fragment>
         ))}
       </Box>
     </div>

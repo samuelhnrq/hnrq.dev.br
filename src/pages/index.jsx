@@ -1,13 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 
 import { flexCenterContainer } from '../lib/css-utils'
 import MainCard from '../components/TopHeader/MainCard'
 import ArrowDown from '../components/TopHeader/ArrowDown'
-import AboutMe from '../components/AboutMe'
 import TiltedContainer from '../components/TiltedContainer'
 import AshNazg from '../components/AshNazg'
+
+const AboutMe = dynamic(() => import('../components/AboutMe'))
 
 const rootStyle = css`
   ${flexCenterContainer};
