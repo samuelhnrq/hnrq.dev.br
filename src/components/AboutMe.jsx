@@ -1,11 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 
-import { Box, Divider, Typography } from '@mui/material'
-import React from 'react'
-import ReactMarkdown from 'react-markdown'
-import { usePosts } from '../lib/cms/posts'
+import { Box, Typography } from '@mui/material'
 import { flexCenterContainer } from '../lib/css-utils'
+import Posts from './About/Posts'
 
 const styleSheet = css`
   ${flexCenterContainer};
@@ -23,7 +21,6 @@ const styleSheet = css`
 `
 
 function AboutMe() {
-  const { data } = usePosts()
   return (
     <div css={styleSheet}>
       <Box maxWidth="600px" marginY="40px">
@@ -43,20 +40,7 @@ function AboutMe() {
           hacker on my spare time, open source contribuitor, right wing activist
           and computer hardware enthusiast.
         </Typography>
-        <Typography variant="h2" align="center" marginTop="20px">
-          Últimos Posts
-        </Typography>
-        {data.map((post) => (
-          <React.Fragment key={post.id}>
-            <Divider />
-            <Typography variant="h4" component="h2" gutterBottom>
-              {post.title}
-            </Typography>
-            <Typography gutterBottom component={ReactMarkdown} marginTop={0}>
-              {post.content}
-            </Typography>
-          </React.Fragment>
-        ))}
+        <Posts />
       </Box>
     </div>
   )
