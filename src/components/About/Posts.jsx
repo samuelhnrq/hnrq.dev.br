@@ -1,13 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
 import { Divider, Typography, CircularProgress } from '@mui/material'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import { usePosts } from '../../lib/cms/posts'
-
-const center = css`
-  margin: auto;
-`
 
 function Posts() {
   const { data, isFetching } = usePosts()
