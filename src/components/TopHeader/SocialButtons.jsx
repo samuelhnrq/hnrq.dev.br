@@ -22,21 +22,42 @@ const ButtonsContainer = css`
 `
 
 const socialMediaButtons = [
-  { icon: faGithub, link: 'https://github.com/samuelhnrq' },
-  { icon: faLinkedin, link: 'https://linkedin.com/in/samosaara' },
-  { icon: faTwitter, link: 'https://twitter.com/samo_saara' },
-  { icon: faReddit, link: 'https://reddit.com/u/samosaara' },
-  { icon: faSteam, link: 'https://steamcommunity.com/id/samosaara' },
+  {
+    icon: faGithub,
+    link: 'https://github.com/samuelhnrq',
+    label: 'Link para Github',
+  },
+  {
+    icon: faLinkedin,
+    link: 'https://linkedin.com/in/samosaara',
+    label: 'Link para LinkedIn',
+  },
+  {
+    icon: faTwitter,
+    link: 'https://twitter.com/samo_saara',
+    label: 'Link para Twitter',
+  },
+  {
+    icon: faReddit,
+    link: 'https://reddit.com/u/samosaara',
+    label: 'Link para Reddit',
+  },
+  {
+    icon: faSteam,
+    link: 'https://steamcommunity.com/id/samosaara',
+    label: 'Link para Steam',
+  },
 ]
 
 function MediaButtons() {
   return (
-    <Typography variant="h4" css={ButtonsContainer}>
+    <Typography variant="h4" css={ButtonsContainer} component="h2">
       {socialMediaButtons.map((socialMedia) => (
         <a
           key={socialMedia.link}
           target="_blank"
           rel="noreferrer"
+          aria-label={socialMedia.label}
           href={socialMedia.link}
         >
           <FontAwesomeIcon icon={socialMedia.icon} color="black" />
