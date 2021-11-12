@@ -4,19 +4,21 @@ import { useQuery } from 'react-query'
 
 const query = gql`
   query {
-    allPosts {
-      id
-      title
-      content
-      _status
-      _firstPublishedAt
+    user(username: "samuelhnrq") {
+      publication {
+        posts(page: 0) {
+          _id
+          title
+          contentMarkdown
+        }
+      }
     }
   }
 `
 
 export async function fetchPosts() {
   const res = await graphQlClient.request(query)
-  return res.allPosts
+  return res.user.publication.posts
 }
 
 export function usePosts() {
