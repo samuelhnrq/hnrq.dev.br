@@ -61,8 +61,8 @@ function ArrowDown() {
         animation-iteration-count: infinite, 1;
         animation-timing-function: ease-out;
         bottom: ${delta + 5}px;
-        mix-blend-mode: multiply;
-        color: red;
+        mix-blend-mode: difference;
+        color: #ff7676;
       `}
     />
   )

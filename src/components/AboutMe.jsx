@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 
 import { Box, Typography } from '@mui/material'
 import { flexCenterContainer } from '../lib/css-utils'
-import Posts from './About/Posts'
+import Posts from './About/PostList'
 
 const styleSheet = css`
   ${flexCenterContainer};
