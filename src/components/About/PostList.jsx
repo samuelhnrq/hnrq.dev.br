@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { Divider, Typography, CircularProgress } from '@mui/material'
 import React from 'react'
