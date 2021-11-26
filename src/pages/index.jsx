@@ -24,10 +24,10 @@ const rootStyle = css`
 export default function Home() {
   return (
     <>
-      <div css={rootStyle}>
-        <Head>
-          <title>HNRQ</title>
-        </Head>
+      <Head>
+        <title>HNRQ</title>
+      </Head>
+      <section css={rootStyle} aria-label="Bloco de titulo">
         <AshNazg />
         <TiltedContainer
           css={css`
@@ -38,8 +38,10 @@ export default function Home() {
           <MainCard />
         </TiltedContainer>
         <ArrowDown />
-      </div>
-      <AboutMe />
+      </section>
+      <section aria-label="Seção sobre mim">
+        <AboutMe />
+      </section>
     </>
   )
 }

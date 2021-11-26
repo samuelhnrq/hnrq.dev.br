@@ -1,23 +1,16 @@
 import { css } from '@emotion/react'
+import { Typography } from '@mui/material'
 
-const WipContainer = css`
-  font-family: 'Comic Sans MS', 'Times New Roman', serif;
-  width: fit-content;
+const wipContainer = css`
   background-color: aqua;
-  font-size: 1.2rem;
-  height: 20px;
-  padding: 4px 16px 1px 5px;
-  margin: 5px 10px 0;
-  & > span {
-    margin-left: -14px;
-  }
+  padding: 3px;
 `
 
 function WipMark(props) {
   return (
-    <h2 css={WipContainer} {...props}>
+    <Typography variant="h5" component="h2" css={wipContainer} {...props}>
       <span>WIP!</span>
-    </h2>
+    </Typography>
   )
 }
 

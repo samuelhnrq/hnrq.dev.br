@@ -50,7 +50,12 @@ const socialMediaButtons = [
 
 function MediaButtons() {
   return (
-    <Typography variant="h4" css={ButtonsContainer} component="h2">
+    <Typography
+      variant="h4"
+      css={ButtonsContainer}
+      component="h2"
+      aria-label="Lista de links sociais"
+    >
       {socialMediaButtons.map((socialMedia) => (
         <a
           key={socialMedia.link}
