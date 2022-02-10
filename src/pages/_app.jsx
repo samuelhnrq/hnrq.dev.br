@@ -5,8 +5,6 @@ import {
   dom as faDomUtils,
   config as faConfig,
 } from '@fortawesome/fontawesome-svg-core'
-import { ApolloProvider } from '@apollo/client'
-import { graphQlClient } from '../lib/cms/client'
 faConfig.autoAddCss = false
 
 const faCss = css`
@@ -20,9 +18,7 @@ export default function MyApp(props) {
     <ThemeProvider theme={theme}>
       <Global styles={faCss} />
       <CssBaseline />
-      <ApolloProvider client={graphQlClient}>
-        <Component {...pageProps} />
-      </ApolloProvider>
+      <Component {...pageProps} />
     </ThemeProvider>
   )
 }

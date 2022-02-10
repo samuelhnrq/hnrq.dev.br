@@ -1,6 +1,8 @@
+import { ApolloProvider } from '@apollo/client'
 import { css } from '@emotion/react'
 
 import { Box, Typography } from '@mui/material'
+import { graphQlClient } from '../lib/cms/client'
 import { flexCenterContainer } from '../lib/css-utils'
 import Posts from './About/PostList'
 
@@ -22,25 +24,27 @@ const styleSheet = css`
 function AboutMe() {
   return (
     <div css={styleSheet}>
-      <Box maxWidth="600px" marginY="40px">
-        <Typography variant="h4" component="h2" align="right">
-          Hello, I love to code
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          component="h3"
-          align="right"
-          gutterBottom
-        >
-          <i>A true master is an eternal student</i>
-        </Typography>
-        <Typography variant="body1" align="justify" gutterBottom>
-          Proud <i>gaymer</i> software engineer here. Friendly neighboorhood
-          hacker on my spare time, open source contribuitor, right wing activist
-          and computer hardware enthusiast.
-        </Typography>
-        <Posts />
-      </Box>
+      <ApolloProvider client={graphQlClient}>
+        <Box maxWidth="600px" marginY="40px">
+          <Typography variant="h4" component="h2" align="right">
+            Hello, I love to code
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            component="h3"
+            align="right"
+            gutterBottom
+          >
+            <i>A true master is an eternal student</i>
+          </Typography>
+          <Typography variant="body1" align="justify" gutterBottom>
+            Proud <i>gaymer</i> software engineer here. Friendly neighboorhood
+            hacker on my spare time, open source contribuitor, right wing
+            activist and computer hardware enthusiast.
+          </Typography>
+          <Posts />
+        </Box>
+      </ApolloProvider>
     </div>
   )
 }

@@ -6,9 +6,9 @@ import { flexCenterContainer } from '../lib/css-utils'
 import MainCard from '../components/TopHeader/MainCard'
 import ArrowDown from '../components/TopHeader/ArrowDown'
 import TiltedContainer from '../components/TiltedContainer'
-import AshNazg from '../components/AshNazg'
 
 const AboutMe = dynamic(() => import('../components/AboutMe'))
+const AshNazg = dynamic(() => import('../components/AshNazg'))
 
 const rootStyle = css`
   ${flexCenterContainer};
