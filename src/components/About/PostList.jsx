@@ -10,14 +10,14 @@ const centered = css`
 `
 
 function Posts() {
-  const { data, isFetching } = usePosts()
+  const { data = [], loading } = usePosts()
   return (
     <div>
       <Typography variant="h2" align="center" marginTop="20px" gutterBottom>
         Últimos Posts
       </Typography>
       {/* TODO: Skeleton */}
-      {isFetching && !data.length && <CircularProgress css={centered} />}
+      {loading && <CircularProgress css={centered} />}
       {data.map((post, i) => (
         <React.Fragment key={post._id}>
           <Post post={post} />

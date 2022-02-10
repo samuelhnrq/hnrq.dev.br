@@ -1,4 +1,3 @@
-import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import theme from '../lib/mui-theme'
 import { config as faConfig } from '@fortawesome/fontawesome-svg-core'

@@ -1,6 +1,4 @@
-import { graphQlClient } from './config'
-import { gql } from 'graphql-request'
-import { useQuery } from 'react-query'
+import { gql, useQuery } from '@apollo/client'
 
 const query = gql`
   query {
@@ -16,11 +14,12 @@ const query = gql`
   }
 `
 
-export async function fetchPosts() {
-  const res = await graphQlClient.request(query)
-  return res.user.publication.posts
-}
-
 export function usePosts() {
-  return useQuery('posts', fetchPosts, { initialData: [] })
+  const result = useQuery(query, { ssr: true })
+  if (result.data) {
+    result.data = result.data.user.publication.posts
+  } else {
+    result.data = []
+  }
+  return result
 }

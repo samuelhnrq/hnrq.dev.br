@@ -9,28 +9,7 @@ function scrollDown() {
   })
 }
 
-const delta = 25
 const keyframes = css`
-  @keyframes bounce {
-    0% {
-      transform: translateY(0);
-    }
-    20% {
-      transform: translateY(${delta}px);
-    }
-    30% {
-      transform: translateY(${delta * 0.75}px);
-    }
-    40% {
-      transform: translateY(${delta}px);
-    }
-    80% {
-      transform: translateY(${delta}px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
   @keyframes appear {
     0% {
       opacity: 0;
@@ -43,27 +22,34 @@ const keyframes = css`
 
 function ArrowDown() {
   return (
-    <FontAwesomeIcon
-      icon={faArrowDown}
-      size="3x"
-      additive="replace"
-      accumulate="sum"
-      onClick={scrollDown}
+    <span
       css={css`
         ${keyframes};
-        animation-name: bounce, appear;
+        animation-name: appear;
         position: absolute;
         opacity: 0;
-        animation-delay: 10s, 10s;
-        animation-duration: 2s, 1s;
-        animation-fill-mode: none, forwards;
-        animation-iteration-count: infinite, 1;
+        animation-delay: 2s;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
         animation-timing-function: ease-out;
-        bottom: ${delta + 5}px;
         mix-blend-mode: difference;
-        color: #ff7676;
+        bottom: 25px;
       `}
-    />
+    >
+      <FontAwesomeIcon
+        icon={faArrowDown}
+        size="3x"
+        additive="replace"
+        accumulate="sum"
+        className="fa-bounce"
+        onClick={scrollDown}
+        css={css`
+          color: #ff7676;
+          --fa-animation-duration: 1.5s;
+        `}
+      />
+    </span>
   )
 }
 
